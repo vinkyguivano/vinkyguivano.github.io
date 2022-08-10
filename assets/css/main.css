@@ -325,7 +325,7 @@ img{
 }
 .portfolio__image img{
     display: block;
-    max-height: 600px;
+    max-height: 400px;
     margin: auto;
     object-fit: cover;
 }
@@ -691,6 +691,10 @@ img{
 
     .portfolio__tech-stack{
         margin: var(--mb-2) 0;
+    }
+
+    .portfolio__image img{
+        max-height: 600px;
     }
 
     .footer__container{
