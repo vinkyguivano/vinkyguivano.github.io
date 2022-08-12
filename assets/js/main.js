@@ -1,6 +1,6 @@
 function redirectPortfolio(link) {
     if (link) {
-        window.open(link, '__blank');
+        window.open(link, '__blank', 'noopener,noreferrer');
     }
 }
 
