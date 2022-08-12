@@ -38,9 +38,9 @@ function scrollActive() {
 
 function scrollHeader() {
     if (window.scrollY >= 80) {
-        $(".nav").addClass('shadow')
+        $(".header").addClass('shadow')
     } else {
-        $(".nav").removeClass('shadow')
+        $(".header").removeClass('shadow')
     }
 }
 
@@ -120,7 +120,7 @@ $(document).ready(function () {
     })
 
     $('.aboutme__button').click(() => {
-        window.open("assets/pdf/CV_VinkyGuivano.pdf", '__blank');
+        window.open("assets/pdf/CV_VinkyGuivano.pdf", '__blank', 'noopener,noreferrer');
     })
 
     $('.scrollup').click(() => {
