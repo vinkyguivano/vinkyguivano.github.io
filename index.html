@@ -8,6 +8,7 @@
     <title>Vinky Guivano</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -56,14 +57,14 @@
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
-                    <div class="home__intro">
+                    <div class="home__intro" data-aos="fade-right">
                         <h1 class="home__intro-subtitle">Hello! I'm</h1>
                         <h1 class="home__intro-name">Vinky Guivano</h1>
                     </div>
-                    <div class="home__img">
+                    <div class="home__img" data-aos="fade-left">
                         <img src="assets/img/Profil.png" alt="Profil Img">
                     </div>
-                    <div class="home__other">
+                    <div class="home__other" data-aos="fade-right">
                         <div class="home__job-title">
                             <h2>I'm a Software Engineer</h2>
                             <h2>(Full Stack).</h2>
@@ -79,19 +80,19 @@
         <section class="aboutme section" id="aboutme">
             <h2 class="section__title">About Me</h2>
             <div class="aboutme__container container grid">
-                <img src="assets/img/Illustration.png" alt="Aboutme Image" class="aboutme__img">
-                <p class="aboutme__text">
+                <img src="assets/img/Illustration.png" alt="Aboutme Image" class="aboutme__img" data-aos="fade-right">
+                <p class="aboutme__text" data-aos="fade-left">
                     Hi, this is a bit of a story about me. I come from a town called Pekanbaru in Indonesia. Since I was
                     a kid, I’ve loved spending most of my time playing computer, hence it led me to enroll in the
                     Computer Science study program at BINUS University even though I didn’t know about coding yet at
                     that time. I’ve been enjoying every single minute I spent learning about it and finally, I graduated
                     from the college in 2022.
                 </p>
-                <button class="aboutme__button button">
+                <button class="aboutme__button button" data-aos="fade-left">
                     Download CV
                     <i class="uil uil-import button__icon"></i>
                 </button>
-                <div class="aboutme__social-media grid">
+                <div class="aboutme__social-media grid" data-aos="fade-left">
                     <a href="https://www.instagram.com/vinkyguivanoo/" target="_blank" rel="noopener noreferrer">
                         <i class="uil uil-instagram"></i>
                     </a>
@@ -107,7 +108,7 @@
         </section>
         <section class="portfolio section" id="portfolio">
             <h2 class="section__title">My Portfolio</h2>
-            <div class="portfolio__container container swiper">
+            <div class="portfolio__container container swiper" data-aos="fade-up">
                 <div class="swiper-wrapper">
                     <div class="portfolio__content swiper-slide">
                         <div class="portfolio__image">
@@ -162,7 +163,8 @@
                                 </div>
                                 Node.js + Express.js + MongoDB
                             </h3>
-                            <button class="portfolio__button button" onclick="redirectPortfolio('https://vinkyguivanoshopudemy.herokuapp.com/')">
+                            <button class="portfolio__button button"
+                                onclick="redirectPortfolio('https://vinkyguivanoshopudemy.herokuapp.com/')">
                                 Demo
                                 <i class="uil uil-arrow-right button__icon"></i>
                             </button>
@@ -200,7 +202,7 @@
         <section class="contact section" id="contact">
             <h2 class="section__title">Contact Me</h2>
             <div class="contact__container container grid">
-                <div>
+                <div data-aos="fade-right">
                     <div class="contact__information">
                         <i class="uil uil-envelope-alt contact__logo"></i>
                         <div>
@@ -224,7 +226,7 @@
                     </div>
                 </div>
                 <form id="contact__form" class="contact__form grid" method="POST"
-                    action="https://formspree.io/f/xvoypejb">
+                    action="https://formspree.io/f/xvoypejb" data-aos="fade-left">
                     <div class="input__group">
                         <label for="name" class="input__label">Name</label>
                         <input type="text" name="name" id="name" class="input__text">
@@ -281,7 +283,15 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 500,
+            easing: 'ease-in-out',
+            anchorPlacement: 'top-bottom'
+        });
+    </script>
 </body>
 
 </html>
