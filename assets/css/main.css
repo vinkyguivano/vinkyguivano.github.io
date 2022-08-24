@@ -8,14 +8,17 @@
     /*COLORS*/
     --hue-color: 277;
 
-    --first-color: hsl(var(--hue-color), 38%, 37%);
-    --first-color-alt: hsl(var(--hue-color), 50%, 28%);
-    --text-color: #fff;;
-    --text-color-lighter: #cdcdcd;
-    --body-color: #141414;
-    --container-color: #1A1A1A;
-    --black-darker: #0f0f0f;
-
+    --first-color: hsl(var(--hue-color), 54%, 37%);
+    --first-color-alt: hsl(var(--hue-color), 45%, 32%);
+    --body-color: #FFF;
+    --even-section-color: #FFF;
+    --button-text-color: #FFF;
+    --input-color: #EDEDED;
+    --text-color: #222;
+    --text-color-lighter: #555;
+    --footer-color: hsl(var(--hue-color), 54%, 37%);
+    --footer-text-color: #fff;
+    
     /*FONT & TYPOGRAPHYS*/
     --body-font:'Poppins', sans-serif;
     
@@ -57,6 +60,17 @@
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
+}
+
+.dark-theme{
+    --first-color: hsl(var(--hue-color), 38%, 37%);
+    --first-color-alt: hsl(var(--hue-color), 50%, 28%);
+    --body-color: #141414;
+    --even-section-color: #1A1A1A;
+    --text-color: #fff;;
+    --text-color-lighter: #cdcdcd;
+    --input-color: #fff;
+    --footer-color: #141414;
 }
 
 /* BASE */
@@ -158,6 +172,23 @@ img{
     text-align: center;
     border-radius: 50%;
     transition: .5s;
+    line-height: 30px;
+}
+
+.nav__right{
+    display: flex;
+    align-items: center;
+}
+
+.theme-icon{
+    cursor: pointer;
+    margin-left: .5rem;
+    font-weight: var(--font-medium);
+    font-size: 1.25rem;
+}
+
+.theme-icon:hover{
+    color: var(--first-color-alt);
 }
 
 .nav__logo,
@@ -165,9 +196,9 @@ img{
     font-weight: var(--font-medium)
 }
 
-.nav__toggle:hover{
+/* .nav__toggle:hover{
     background-color: var(--black-darker);
-}
+} */
 
 @media screen and (max-width: 767px){
     .nav__menu{
@@ -248,7 +279,7 @@ img{
     display: inline-block;
     outline: none;
     border: none;
-    color: var(--text-color);
+    color: var(--button-text-color);
     background-color: var(--first-color);
     padding: 1.125rem 1.75rem;
     border-radius: 11px;
@@ -279,7 +310,7 @@ img{
 
 /* ========== ABOUT ME ========== */
 .aboutme{
-    background-color: var(--container-color);
+    background-color: var(--even-section-color);
 }
 
 .aboutme__container{
@@ -311,7 +342,7 @@ img{
 
 .aboutme__social-media i {
     font-size: 2rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .aboutme__social-media i:hover{
@@ -349,7 +380,7 @@ img{
 .portfolio__tech-title{
     font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -368,7 +399,7 @@ img{
 }
 
 .swiper-pagination-bullet{
-    background-color: #fff;
+    background-color: var(--text-color-lighter);
     opacity: .65;
 }
 
@@ -399,7 +430,7 @@ img{
 
 /*======CONTACT ME========*/
 .contact{
-    background-color: var(--container-color);
+    background-color: var(--even-section-color);
 }
 
 .contact__container{
@@ -441,10 +472,10 @@ img{
 .input__text{
     width: 100%;
     resize: none;
-    color: var(--body-color);
+    color: var(--text-color);
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    background-color: #fff;
+    background-color: var(--input-color);
     border-radius: 11px;
     border: none;
     outline: none;
@@ -457,6 +488,11 @@ img{
 }
 
 /* FOOTER */
+.footer{
+    background-color: var(--footer-color);
+    color: var(--footer-text-color)
+}
+
 .footer__container{
     padding: 3rem 0 3.625rem;
     row-gap: 2.5rem;
@@ -468,7 +504,8 @@ img{
 
 .footer__social{
     font-size: 1.75rem;
-    margin-right: var(--mb-0-5)
+    margin-right: var(--mb-0-5);
+    color: var(--footer-text-color)
 }
 
 .footer__links{
@@ -477,9 +514,13 @@ img{
     row-gap: 1rem;
 }
 
+.footer__link{
+    color: var(--footer-text-color);
+}
+
 .footer__link:hover,
 .footer__social:hover{
-    color: var(--first-color);
+    color: var(--first-color-alt);
 }
 
 .footer__copy{
@@ -510,6 +551,7 @@ img{
     z-index: var(--z-tooltip);
     transition: .5s;
     cursor: pointer;
+    box-shadow: 1px 1px 5px #000;
 }
 
 .show-scrollup{
@@ -523,6 +565,7 @@ img{
 
 .scrollup__icon{
     font-size: 1.5rem;
+    color: var(--button-text-color);
 }
 
 .home__content,
@@ -636,6 +679,11 @@ img{
         align-items: center;
     }
 
+    .nav__btns{
+        width: 100%;
+        margin-right: 2rem;
+    }
+
     .nav__toggle,
     .nav__icon{
         display: none;
@@ -651,7 +699,7 @@ img{
     }
 
     .nav__logo{
-        width : 2rem;
+        width : 2.5rem;
     }
 
     /*===== HOME ===== */

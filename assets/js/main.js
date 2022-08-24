@@ -127,6 +127,30 @@ $(document).ready(function () {
         window.location.href = "#";
     })
 
+    const darkTheme = 'dark-theme';
+    const sunIcon = 'uil-sun';
+    const themeIcon = document.getElementsByClassName('theme-icon')[0]
+    const body = document.body;
+
+    const selectedTheme = localStorage.getItem('selectedTheme');
+    const selectedIcon = localStorage.getItem('selectedIcon');
+
+    if(selectedTheme){
+       body.classList[selectedTheme === darkTheme ? 'add' : 'remove'](darkTheme);
+       themeIcon.classList[selectedIcon === sunIcon? 'add' : 'remove'](sunIcon);
+    }
+
+    const getCurrentTheme = () => body.classList.contains(darkTheme) ? darkTheme : 'light-theme';
+    const getCurrentIcon = () =>themeIcon.classList.contains(sunIcon) ? sunIcon : 'uil-moon'
+
+    $('.theme-icon').click(() => {
+        $('body').toggleClass(darkTheme);
+        $('.theme-icon').toggleClass(sunIcon);
+
+        localStorage.setItem('selectedTheme', getCurrentTheme());
+        localStorage.setItem('selectedIcon', getCurrentIcon());
+    })
+
     window.addEventListener('scroll', scrollActive);
     window.addEventListener('scroll', scrollHeader);
     window.addEventListener('scroll', scrollTop);
